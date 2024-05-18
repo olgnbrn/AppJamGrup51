@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '227924869460',
     projectId: 'appjam51',
     storageBucket: 'appjam51.appspot.com',
+    iosClientId: '227924869460-tad8ea0141rsd4s9d229g1dj9nga7ebn.apps.googleusercontent.com',
     iosBundleId: 'com.example.appjamgrup51',
   );
 
@@ -72,6 +73,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '227924869460',
     projectId: 'appjam51',
     storageBucket: 'appjam51.appspot.com',
+    iosClientId: '227924869460-tad8ea0141rsd4s9d229g1dj9nga7ebn.apps.googleusercontent.com',
     iosBundleId: 'com.example.appjamgrup51',
   );
 
@@ -83,4 +85,5 @@ class DefaultFirebaseOptions {
     authDomain: 'appjam51.firebaseapp.com',
     storageBucket: 'appjam51.appspot.com',
   );
+
 }

@@ -12,7 +12,12 @@
           "package_name": "com.example.appjamgrup51"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "227924869460-s7ev2rlgi2ffo6pt15rb6phasmeui5ib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyASVAd_f56U6TtfrfNW51vwdqmKVn4G0MI"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227924869460-s7ev2rlgi2ffo6pt15rb6phasmeui5ib.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "227924869460-tad8ea0141rsd4s9d229g1dj9nga7ebn.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.appjamgrup51"
+              }
+            }
+          ]
         }
       }
     }

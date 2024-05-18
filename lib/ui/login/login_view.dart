@@ -1,14 +1,16 @@
+import 'package:appjamgrup51/ui/login/login_view_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:stacked/stacked.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StackedView<LoginViewModel> {
   LoginView({super.key});
 
   final TextEditingController emailcontroller = TextEditingController();
   final TextEditingController passwordcontroller = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Widget builder(BuildContext context, LoginViewModel viewModel, Widget? child) {
     // Ekran boyutlarını al
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
@@ -81,7 +83,7 @@ class LoginView extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Giriş işlemleri burada yapılacak
+                      viewModel.signIn(emailcontroller.text, passwordcontroller.text);
                     },
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(vertical: 15.0), backgroundColor: Colors.blue.shade700,
@@ -105,7 +107,7 @@ class LoginView extends StatelessWidget {
                   children: [
                     TextButton(
                       onPressed: () {
-                        // Şifremi unuttum işlemleri burada yapılacak
+                        viewModel.goToRegister();
                       },
                       child: const Text(
                         'Kayıt Ol',
@@ -137,5 +139,12 @@ class LoginView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+
+
+  @override
+  LoginViewModel viewModelBuilder(BuildContext context) {
+    return LoginViewModel();
   }
 }

@@ -1,4 +1,5 @@
 import 'package:appjamgrup51/pages/bilgi_paylasimi.dart';
+import 'package:appjamgrup51/pages/profile_page.dart';
 import 'package:appjamgrup51/ui/homepage/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -11,47 +12,39 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   int currentPageIndex = 0;
+  final List<Widget> _pages = [
+    HomePageView(),
+    BilgiPaylasimi(),
+    ProfilePage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return Scaffold(
-        bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (value) {
-            setState(() {
-              currentPageIndex = value;
-            });
-          },
-          selectedIndex: currentPageIndex,
-          destinations: const [
-            NavigationDestination(
-                icon: Icon(Icons.home),
-                label: "AnaSayfa"),
-            NavigationDestination(
-                icon: Icon(Icons.person),
-                label: "Profil"),
-            NavigationDestination(
-                icon: Icon(Icons.alt_route_rounded),
-                label: "Bilgi Paylaşımı"),
-          ],
-        ),
-        body: <Widget>[
-          HomePageView(),
-          Card(
-            shadowColor: Colors.transparent,
-            margin: const EdgeInsets.all(8.0),
-            child: SizedBox.expand(
-              child: Center(
-                child: Text(
-                  'Ayarlar',
-                  style: theme.textTheme.titleLarge,
-                ),
-              ),
-            ),
-          ),
-          const BilgiPaylasimi()
-
-        ][currentPageIndex]
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (value) {
+          setState(() {
+            currentPageIndex = value;
+          });
+        },
+        selectedIndex: currentPageIndex,
+        destinations: const [
+          NavigationDestination(
+              icon: Icon(Icons.home),
+              label: "AnaSayfa"),
+          NavigationDestination(
+              icon: Icon(Icons.alt_route_rounded),
+              label: "Bilgi Paylaşımı"),
+          NavigationDestination(
+              icon: Icon(Icons.person),
+              label: "Profil"),
+        ],
+      ),
+      body: IndexedStack(
+        index: currentPageIndex,
+        children: _pages,
+      ),
     );
   }
 }

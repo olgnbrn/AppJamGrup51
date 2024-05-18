@@ -151,7 +151,7 @@ class SignUpView extends StatelessWidget {
                     // Kayıt olma işlemleri burada yapılacak
                   },
                   child:  RichText(
-                   text: TextSpan(
+                   text: const TextSpan(
                      children: [
                        TextSpan(text:"Zaten bir hesaba sahip misin? "),
                        TextSpan(text: 'Login',style: TextStyle(

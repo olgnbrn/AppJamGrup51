@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "227924869460",
+    "project_id": "appjam51",
+    "storage_bucket": "appjam51.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227924869460:android:10bc54a4a63dc3f279c8c1",
+        "android_client_info": {
+          "package_name": "com.example.appjamgrup51"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASVAd_f56U6TtfrfNW51vwdqmKVn4G0MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

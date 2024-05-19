@@ -30,6 +30,22 @@ class _ProfilePageState extends State<ProfilePage> {
     super.dispose();
   }
 
+  InputDecoration _buildDecoration(String label) {
+    return InputDecoration(
+      labelText: label,
+      labelStyle: TextStyle(color: Colors.black),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.white),
+      ),
+      border: OutlineInputBorder(),
+      filled: true,
+      fillColor: Colors.white[50],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,20 +84,22 @@ class _ProfilePageState extends State<ProfilePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 20),
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'İsim'),
-              ),
-              TextField(
-                controller: _usernameController,
-                decoration: InputDecoration(labelText: 'Kullanıcı Adı'),
-              ),
-              TextField(
-                controller: _bioController,
-                decoration: InputDecoration(labelText: 'Bio'),
+                decoration: _buildDecoration('İsim'),
               ),
               SizedBox(height: 20),
+              TextField(
+                controller: _usernameController,
+                decoration: _buildDecoration('Kullanıcı Adı'),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                controller: _bioController,
+                decoration: _buildDecoration('Bio'),
+              ),
+              SizedBox(height: 40),
               ElevatedButton(
                 onPressed: () {
                   _authenticationService.signOut();

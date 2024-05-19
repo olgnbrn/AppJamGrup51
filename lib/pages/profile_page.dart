@@ -38,11 +38,11 @@ class _ProfilePageState extends State<ProfilePage> {
         borderSide: BorderSide(color: Colors.black),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.white),
+        borderSide: BorderSide(color: Colors.grey),
       ),
       border: OutlineInputBorder(),
       filled: true,
-      fillColor: Colors.white[50],
+      fillColor: Colors.white, // Arka plan rengi beyaz olarak ayarlandı.
     );
   }
 
